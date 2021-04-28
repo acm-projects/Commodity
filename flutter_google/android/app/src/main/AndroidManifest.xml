@@ -4,7 +4,7 @@
         android:label="flutter_google"
         android:icon="@mipmap/ic_launcher">
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyAv6Qebp2RldZzW3ykewEMY5JPi1aGCYGg"/>
+           android:value="AIzaSyDwsCu2HdnFUnIs2sJOylZuAQf1UD8Uus8"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -40,4 +40,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>

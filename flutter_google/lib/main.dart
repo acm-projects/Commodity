@@ -4,9 +4,12 @@ import 'package:flutter_google/pages/map.dart';
 import 'package:flutter_google/pages/Announcements.dart';
 import 'package:flutter_google/pages/Profile.dart';
 import 'package:flutter_google/pages/Hotline.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main(){
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -27,8 +30,7 @@ class _MyHomePageState extends State<MyHomePage>{
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static  List<Widget> _widgetOptions = <Widget>[
-    Announcements(),
-    Map(),
+    MapPage(),
     Profile(),
     Hotline(),
   ];
@@ -50,9 +52,6 @@ class _MyHomePageState extends State<MyHomePage>{
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-              icon: Icon(Icons.speaker),
-              label: "Announcements"),
           BottomNavigationBarItem(
               icon: Icon(Icons.map),
               label: "Map"),
